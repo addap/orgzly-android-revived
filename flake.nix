@@ -1,7 +1,7 @@
 {
   description = "Orgly Android nix build";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = {
@@ -23,7 +23,7 @@
     androidComposition = pkgs.androidenv.composeAndroidPackages {
         cmdLineToolsVersion = cmdLineToolsVersion;
         toolsVersion = "26.1.1";
-        platformToolsVersion = "34.0.5";
+        platformToolsVersion = "35.0.2";
         buildToolsVersions = ["30.0.3" "33.0.1" buildToolsVersion];
         includeEmulator = true;
         platformVersions = ["30" "33" "35" "36"];
@@ -45,12 +45,13 @@
       just
     ];
     android-sdk = androidComposition.androidsdk;
+    android-sdk-bin = "${androidComposition.androidsdk}/bin";
     android-home = "${androidComposition.androidsdk}/libexec/android-sdk";
     cmakeDir = "${android-home}/cmake/${cmakeVersion}/bin";
     emulator = "${android-home}/emulator";
     cmdLineTools = "${android-home}/cmdline-tools/${cmdLineToolsVersion}/bin";
     aapt2Binary = "${android-home}/build-tools/${buildToolsVersion}/aapt2";
-    additionalPath = builtins.concatStringsSep ":" [cmakeDir emulator cmdLineTools];
+    additionalPath = builtins.concatStringsSep ":" [cmakeDir emulator cmdLineTools android-sdk-bin];
   in {
     devShells = with pkgs; {
       default = mkShell {

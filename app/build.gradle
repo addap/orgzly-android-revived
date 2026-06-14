@@ -13,8 +13,8 @@ android {
         targetSdkVersion 36
         versionCode 288
         versionName "1.22.0"
-        applicationId = "com.orgzlyrevived"
-        resValue "string", "application_id", "com.orgzlyrevived"
+        applicationId = "com.orgzlyrevived2"
+        resValue "string", "application_id", "com.orgzlyrevived2"
 
         testInstrumentationRunner "com.orgzly.android.OrgzlyTestRunner"
 
