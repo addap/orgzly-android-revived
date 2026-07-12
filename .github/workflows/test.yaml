@@ -4,18 +4,18 @@ permissions:
   contents: read
   
 on:
-  pull_request:
-    branches:
-      - 'master'
-    paths-ignore:
-      - 'README.org'
-      - 'metadata/**'
-      - 'app/src/main/res/raw-*/*'
-      - 'app/src/main/res/values-*/*'
-      - '.github/**'
+  # pull_request:
+  #   branches:
+  #     - 'master'
+  #   paths-ignore:
+  #     - 'README.org'
+  #     - 'metadata/**'
+  #     - 'app/src/main/res/raw-*/*'
+  #     - 'app/src/main/res/values-*/*'
+  #     - '.github/**'
   workflow_dispatch:
-  schedule:
-    - cron: "03 03 * * sun"
+  # schedule:
+  #   - cron: "03 03 * * sun"
 
 jobs:
 
