@@ -2,9 +2,9 @@ name: Build pre-release artifacts and draft Github release
 
 on:
   # Trigger by pushing a version tag (which are protected)
-  push:
-    tags:
-      - v*.*.*-*
+  # push:
+  #   tags:
+  #     - v*.*.*-*
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

@@ -3,8 +3,8 @@ name: Build and publish "weekly" unstable snapshot release
 # Based on https://github.com/refined-github/refined-github/blob/5cda3447bf80cca0c64ae5eb79779ecd62fec18e/.github/workflows/release.yml#L30-L32
  
 on:
-  schedule:
-    - cron: '41 19 * * 2'
+  # schedule:
+  #   - cron: '41 19 * * 2'
   workflow_dispatch:
 
 permissions:
